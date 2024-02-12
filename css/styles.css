@@ -1,0 +1,165 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 16
+3. Estilos generales ..... 38
+4. Estilos container ..... 48
+5. Estilos card .......... 59
+6. Estilos body .......... 74
+7. Estilos boton ......... 110
+8. Media queries ......... 128
+-------------------- */
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+	/* Paleta de colores */
+	--dark-cyan: hsl(158, 36%, 37%);
+	--cream-color: hsl(30, 38%, 92%);
+	--very-dar-blue: hsl(212, 21%, 14%);
+	--dark-grayish-blue: hsl(228, 12%, 48%);
+	--white-color: hsl(0, 0%, 100%);
+
+	/* Config. generales */
+	--fraunces-family: 'Fraunces', serif;
+	--montserrat-family: 'Montserrat', sans-serif;
+	--f-size: 14px;
+	--l-height: ;
+}
+
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+body {
+	color: var(--dark-grayish-blue);
+	background-color: var(--cream-color);
+	font-size: var(--f-size);
+	font-family: var(--montserrat-family);
+	line-height: var(--l-height);
+}
+
+
+/* ----- Estilos container ----- */
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+
+/* ----- Estilos card ----- */
+.card {
+	width: 90%;
+	border-radius: 10px;
+	background-color: var(--white-color);
+}
+
+.card__image {
+	width: 100%;
+	height: 100%;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+
+/* ----- Estilos body ----- */
+.card__body {
+	padding: 20px;
+}
+
+.card__tag {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.card__title {
+	color: var(--very-dar-blue);
+	font-size: 1.6rem;
+	line-height: 28px;
+	font-family: var(--fraunces-family);
+}
+
+.price {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+.price--new {
+	font-size: 2.3rem;
+	font-weight: 700;
+	color: var(--dark-cyan);
+	font-family: var(--fraunces-family);
+}
+
+.price--old {
+	margin-left: 20px;
+}
+
+
+/* ----- Estilos boton ----- */
+.button {
+	margin: 10px 0;
+	text-align: center;
+	padding: 14px;
+	color: var(--white-color);
+	border-radius: 8px;
+	background-color: var(--dark-cyan);
+}
+
+.btn {
+	color: var(--white-color);
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+
+/* ----- Media queries ----- */
+@media screen and (min-width: 1080px){
+
+	.card {
+		width: 630px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+	
+	.card__image {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 10px;
+	}
+
+	.card__body {
+		display: grid;
+		grid-template-rows: auto auto auto auto auto;
+	}
+
+	.card__title {
+		font-size: 2rem;
+		line-height: 34px;
+	}
+
+	.card__copy {
+		margin-top: -20px;
+	}
+
+	.button {
+		height: 20px;
+		cursor: pointer;
+	}
+
+	.button:hover {
+		background-color: hsl(158, 40%, 17%);
+		transition: all ease .5s;
+	}
+}
